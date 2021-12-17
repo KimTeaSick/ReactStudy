@@ -19,7 +19,7 @@
           second: Math.ceil(Math.random() * 9),
           value: '',
           result: '',
-          answer:'',
+          answer: '',
         };
       }
 
@@ -33,11 +33,13 @@
             answer: this.state.value,
             value: '',
           });
+          this.input.focus();
         } else {
           this.setState({
             result: '땡',
             value: '',
           });
+          this.input.focus();
         }
       }
 
@@ -45,15 +47,17 @@
         this.setState({ value: e.target.value });
       };
 
+      input;
+
       render() {
         return (
           <div>
             <p>{this.state.first}곱하기 {this.state.second}는?</p>
-            <form onSubmit={ this.onSubmit }>
-              <input value={ this.state.value } onChange={ this.onChange } />
+            <form onSubmit={this.onSubmit}>
+              <input ref={(c) => { this.input = c; }} type="number" value={this.state.value} onChange={this.onChange} />
               <button>입력</button>
             </form>
-            { this.state.answer } { this.state.result }
+            {this.state.answer} {this.state.result}
           </div >
         );
       }
