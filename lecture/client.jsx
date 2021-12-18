@@ -1,7 +1,6 @@
-const React = require('react');
-const ReactDom = require('react-dom');
+import React from 'react';
+import ReactDom from 'react-dom';
 
-const Wordchain = require('./Wordchain');
+import ResponseCheckHooks from './5.RSP/RSP';
 
-
-ReactDom.render(<Wordchain />, document.querySelector('#root'));
+ReactDom.render(<ResponseCheckHooks />, document.querySelector('#root'));

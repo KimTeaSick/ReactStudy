@@ -1,5 +1,4 @@
-const React = require('react');
-const { Component } = React;
+import React,{ Component } from 'react';
 
 class Wordchain extends Component {
   state = {
@@ -49,4 +48,4 @@ class Wordchain extends Component {
   }
 }
 
-module.exports = Wordchain;
+export default Wordchain;
