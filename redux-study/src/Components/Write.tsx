@@ -8,8 +8,8 @@ display:flex;
 const WriteInput = styled.input`
 width:280px;
 height: 100px;
-font-size:25px
-border-radius:10px;
+font-size: 25px
+border-radius: 10px;
 box-sizing: border-box;
 `
 const SendBtn = styled.button`

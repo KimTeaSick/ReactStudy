@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import Card from "../Components/Card";
 import Write from "../Components/Write";
 import { useAppSelector } from "../module";
@@ -11,15 +11,21 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 `
+const CardWrapper = styled.div`
+display: flex;
+flex-direction: column;
+`
 
 const Main: FC = () => {
 
-  const { todoList } = useAppSelector( state => state.todo );
+  const { todoList } = useAppSelector(state => state.todo);
 
-  return(
+  return (
     <MainWrapper>
-        <Card cardContent={todoList} />
-        <Write />
+      <CardWrapper>
+        {todoList.map((value, index) => <Card key={index}>{value}</Card>)}
+      </CardWrapper>
+      <Write />
     </MainWrapper>
   )
 }
